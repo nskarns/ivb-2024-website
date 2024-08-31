@@ -1,0 +1,115 @@
+.header {
+    background-color: #294C2A;
+    border: 5px solid #192F1A;
+    box-sizing: border-box;
+    width: 80%;
+    height: 90px;
+    margin: 0 auto;
+    display: flex;
+    border-radius: 30px;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.left-header {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 48px; 
+    padding-right: 13%;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5); 
+    -webkit-text-stroke: 1px #000000;
+    color: #E3E3E3;
+}
+
+.header-text {
+    font-family: 'League Spartan', sans-serif;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5); 
+    -webkit-text-stroke: 1px #000000;
+    color: #E3E3E3;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.harp {
+    display: flex;
+    height: 85px;
+    margin-right: -20px;
+}
+
+.socials {
+    flex-direction: row;
+    display: flex;
+}
+
+.socials img {
+    height: 50px;
+}
+
+.socials > * {
+    padding-right: 10px;
+}
+
+/* Media Queries for Responsiveness based on width */
+@media (max-width: 1600px) {
+    .left-header {
+        font-size: 36px;
+    }
+
+    .header-text {
+        font-size: 20px;
+    }
+
+    .harp {
+        height: 70px;
+    }
+
+    .socials img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+
+    .left-header {
+        padding-right: 0;
+        margin-left: -15px;
+    }
+
+    .header-text {
+        margin: 5px 0;
+        margin-left: -15px;
+    }
+
+    .socials {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-header {
+        font-size: 24px;
+    }
+
+    .header-text {
+        font-size: 16px;
+    }
+
+    .harp {
+        height: 50px;
+    }
+
+    .socials img {
+        height: 30px;
+    }
+}
