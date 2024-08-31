@@ -1,0 +1,116 @@
+.structure-main {
+    display: flex;
+    flex-direction: row;
+    height: 700px;
+    width: 90%;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.hierarchy {
+    width: 65%;
+    display: flex;
+}
+
+.hierarchy-headers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.hierarchy-header {
+    background-color: #294C2A;
+    border: 5px solid #192F1A;
+    width: 100%;
+    height: 70px;
+    align-items: center; 
+    justify-content: center;
+    font-family: 'League Spartan', sans-serif;
+    color: #E3E3E3;
+    font-size: 1.9vw;
+    text-align: center;
+    display: flex;
+    border-radius: 15px;
+}
+
+.hierarchy-section {
+    width: 30%;
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+    text-align: center;
+}
+
+.online-members {
+    height: 100%;
+    width: 30%;
+    background-color: #294C2A;
+    border: 5px solid #192F1A;
+    border-radius: 15px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.online-members-line {
+    width: 90%;
+    height: 5px;
+    background-color: #192F1A;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    min-height: 5px;
+}
+
+.online-members-list {
+    flex-grow: 1; 
+    width: 90%;
+    overflow-y: auto; 
+    margin-bottom: 10px;
+}
+
+.online-members-list {
+    scrollbar-width: thin; 
+    scrollbar-color: #294C2A #192F1A; 
+    -ms-overflow-style: none;
+}
+
+.online-members-list::-ms-scrollbar {
+    width: 12px;
+}
+
+.online-members-list::-ms-thumb {
+    background: #294C2A;
+    border-radius: 10px; 
+}
+
+.online-members-list::-ms-track {
+    background: #192F1A; 
+}
+
+.structure-header-text {
+    font-family: 'League Spartan', sans-serif;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5); 
+    -webkit-text-stroke: 1px #000000;
+    color: #E3E3E3;
+    font-size: 70px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.spinner {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: auto; /* Center the spinner */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

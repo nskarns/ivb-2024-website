@@ -1,0 +1,53 @@
+.structure-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.company-button {
+    background-color: #68501C;
+    border: 5px solid #3e2e0b;
+    width: 11.5%;
+    height: 70px;
+    margin: 0 auto;
+    display: flex;
+    border-radius: 15px;
+    align-items: center; 
+    justify-content: center;
+    font-family: 'League Spartan', sans-serif;
+    color: #E3E3E3;
+    font-size: 1.9vw;
+    transition: background-color 0.2s, transform 0.2s; 
+}
+
+.company-button-active {
+    background-color: #AB9D68;
+    border: 5px solid #3e2e0b;
+    width: 11.5%;
+    height: 70px;
+    margin: 0 auto;
+    display: flex;
+    border-radius: 15px;
+    align-items: center; 
+    justify-content: center;
+    font-family: 'League Spartan', sans-serif;
+    color: #E3E3E3;
+    font-size: 1.9vw;
+}
+
+.company-button:hover {
+    background-color: #827545; 
+}
+
+
+.company-button:active {
+    background-color: #bbb; 
+    transform: scale(0.95);
+}
+
+.company-button-active:hover {
+    background-color: #68501C; 
+}
+

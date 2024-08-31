@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Structure</title>
+    <link rel="stylesheet" type="text/css" href="css/body.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/page-description.css">
+    <link rel="stylesheet" type="text/css" href="css/buttons.css">
+    <link rel="stylesheet" type="text/css" href="css/structure.css">
+</head>
+<body>
+    <div class="header">
+        <span class="left-header">
+            <a href="home.html"><img src="images/harp.png" alt="harp" class="harp"></a>
+            <span>Irish Volunteer Brigade</span>
+        </span>
+        <a href="index.html" class="header-text">Home</a>
+        <a href="schedule.html" class="header-text">Schedule</a>
+        <a href="structure.html" class="header-text">Structure</a>
+        <a href="gallery.html" class="header-text">Gallery</a>
+        <span class="socials">
+            <a href="https://discord.com/invite/ivb" target="_blank"><img src="images/discord-logo.png" alt="discord"></a>
+            <a href="https://www.youtube.com/@IrishVolunteerBrigade" target="_blank"><img src="images/youtube-logo.png" alt="youtube"></a>
+        </span>
+    </div>
+    <div class="slider">
+        <figure>
+            <img src="images/scroll-view/scroll-one.png">
+            <img src="images/scroll-view/scroll-two.png">
+            <img src="images/scroll-view/scroll-three.png">
+            <img src="images/scroll-view/scroll-four.png">
+            <img src="images/scroll-view/scroll-five.png">
+            <img src="images/scroll-view/scroll-six.png">
+            <img src="images/scroll-view/scroll-one.png">
+        </figure>
+        <div class="page-description">
+            <div class="description-text">
+                <div class="description-header-text">Structure</div>
+                <span>The Irish Volunteer Brigade operates similarly to that of a historical American Civil War Regiment. Here is the current structure for the IVB. There is always rooms to grow and advance within the IVB!</span>
+            </div>
+        </div>
+        <a href="https://discord.com/invite/ivb" target="_blank">
+            <div class="join-now-button">
+                Join The IVB
+            </div>
+        </a>
+    </div>
+    <div class="line buffer"></div>
+    <div class="structure-buttons">
+        <div class="company-button company-button-active" id="0">HQ</div>
+        <div class="company-button" id="1">69th Co. A</div>
+        <div class="company-button" id="2">69th Co. C</div>
+        <div class="company-button" id="3">69th Co. D</div>
+        <div class="company-button" id="4">69th Co. F</div>
+        <div class="company-button" id="5">69th Co. I</div>
+        <div class="company-button" id="6">69th Co. K</div>
+        <div class="company-button" id="7">1st NY Bat. B</div>
+    </div>
+    <div class="line buffer-small"></div>
+    <div class="structure-main">
+        <div class="hierarchy">
+            <div class="hierarchy-headers">
+                <div class="hierarchy-section">
+                    <div class="hierarchy-header">
+                        <div>Officers</div>
+                    </div>
+                    <div class="officers"></div>
+                </div>
+                <div class="hierarchy-section">
+                    <div class="hierarchy-header">
+                        <div>Senior NCOs</div>
+                    </div>
+                    <div class="senior-ncos"></div>
+                </div>
+                <div class="hierarchy-section">
+                    <div class="hierarchy-header">
+                        <div>Junior NCOs</div>
+                    </div>
+                    <div class="junior-ncos"></div>
+                </div>
+            </div>
+        </div>
+        <div class="line-vertical"></div>
+        <div class="online-members">
+            <div class="structure-header-text">Online Members</div>
+            <div class="online-members-line"></div>
+            <div class="online-members-list">
+                <div id="loading-indicator" class="spinner" style="display: none;"></div>
+                <pre id="discord-bot-output"></pre>
+            </div>
+        </div>
+    </div>
+    <div class="line buffer-small"></div>
+    <div class="end-text">@2024 - Irish Volunteer Brigade - <a href="https://www.linkedin.com/in/nicholas-karns/" class="no-text-decoration" target="_blank">Nicholas Karns</a></div>
+    <div class="buffer-small"></div>
+</body>
+<script src="js/update-members.js"></script>
+</html>
