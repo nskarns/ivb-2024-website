@@ -9,8 +9,20 @@ CORS(app)  # Enable CORS
 members_data = []
 
 @app.route('/')
-def home():
+def serve_index():
     return send_from_directory(app.static_folder, 'index.html')
+
+@app.route('/schedule')
+def serve_schedule():
+    return send_from_directory(app.static_folder, 'schedule.html')
+
+@app.route('/structure')
+def serve_structure():
+    return send_from_directory(app.static_folder, 'structure.html')
+
+@app.route('/gallery')
+def serve_gallery():
+    return send_from_directory(app.static_folder, 'gallery.html')
 
 @app.route('/<path:path>')
 def serve_static(path):

@@ -9,10 +9,13 @@ import os
 # Load environment variables from .env file
 load_dotenv()
 
-# Get the bot token from environment variables
+# Get the bot token and base URL from environment variables
 TOKEN = os.getenv('DISCORD_BOT_TOKEN')
 GUILD_ID = 645305502548492289
-WEB_SERVER_URL = 'http://localhost:5000/update_members'
+BASE_URL = os.getenv('BASE_URL')
+
+# Construct the full URL for the update_members endpoint
+WEB_SERVER_URL = f"{BASE_URL}/update_members"
 
 intents = discord.Intents.default()
 intents.members = True
@@ -47,7 +50,8 @@ async def on_ready():
                 member_info = {
                     'id': member.id,
                     'name': member.nick,
-                    'status': status
+                    'status': status,
+                    'avatar': member.avatar.url if member.avatar is not None else "images/discord-logo.png"
                 }
                 
                 members.append(member_info)
