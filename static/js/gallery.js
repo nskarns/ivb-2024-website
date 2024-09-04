@@ -1,14 +1,14 @@
 const mediaFiles = [
-    "../images/gallery/ivb_photo_one.jpg",
-    "../images/gallery/ivb_photo_two.png",
-    "../images/gallery/ivb_video_one.mp4",
-    "../images/gallery/ivb_video_two.mp4",
-    "../images/gallery/ivb_photo_three.png",
-    "../images/gallery/ivb_photo_four.jpg",
-    "../images/gallery/ivb_photo_five.jpg",
-    "../images/gallery/ivb_photo_six.jpg",
-    "../images/gallery/ivb_photo_seven.jpg",
-    "../images/gallery/ivb_photo_eight.jpg",
+    "images/gallery/ivb_photo_one.jpg",
+    "images/gallery/ivb_photo_two.png",
+    "images/gallery/ivb_video_one.mp4",
+    "images/gallery/ivb_video_two.mp4",
+    "images/gallery/ivb_photo_three.png",
+    "images/gallery/ivb_photo_four.jpg",
+    "images/gallery/ivb_photo_five.jpg",
+    "images/gallery/ivb_photo_six.jpg",
+    "images/gallery/ivb_photo_seven.jpg",
+    "images/gallery/ivb_photo_eight.jpg",
 ];
 
 const itemsPerPage = 6;
