@@ -1,9 +1,10 @@
+const BASE_URL = window.location.origin;
+
 async function fetchDiscordWidget() {
     const loadingIndicator = document.getElementById('loading-indicator');
     const discordBotOutput = document.getElementById('discord-bot-output');
 
     try {
-
         let data = { members: [] };
 
         if (data.members.length === 0) {
@@ -12,7 +13,7 @@ async function fetchDiscordWidget() {
         }
 
         while (data.members.length === 0) {
-            const response = await fetch('http://localhost:5000/get_members');
+            const response = await fetch(`${BASE_URL}/get_members`);
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
             }
@@ -103,7 +104,57 @@ function displayData(data) {
 
     members.forEach(member => {
         const memberElement = document.createElement('div');
-        memberElement.textContent = `ID: ${member.id}, Name: ${member.name}, Status: ${member.status}`;
+        memberElement.style.marginBottom = '15px';
+        memberElement.style.display = 'flex'; 
+        memberElement.style.alignItems = 'center'; 
+        memberElement.style.flexDirection = 'row';
+        memberElement.style.justifyContent = 'center';
+        memberElement.classList.add('member');
+    
+        const avatarStatusContainer = document.createElement('div');
+        avatarStatusContainer.style.position = 'relative';
+
+        const avatarElement = document.createElement('img');
+        avatarElement.src = member.avatar;
+        avatarElement.alt = `${member.name}'s avatar`;
+        avatarElement.style.width = '50px'; 
+        avatarElement.style.height = '50px'; 
+        avatarElement.style.borderRadius = '50%';
+        avatarStatusContainer.appendChild(avatarElement);
+
+        const statusElement = document.createElement('span');
+        statusElement.style.display = 'inline-block';
+        statusElement.style.width = '12px';
+        statusElement.style.height = '12px';
+        statusElement.style.borderRadius = '50%';
+        statusElement.style.border = '2px solid black';
+        statusElement.style.marginLeft = '-15%';
+
+        switch (member.status) {
+            case 'online':
+                statusElement.style.backgroundColor = 'green';
+                break;
+            case 'idle':
+                statusElement.style.backgroundColor = 'yellow';
+                break;
+            case 'dnd':
+                statusElement.style.backgroundColor = 'red';
+                break;
+            default:
+                statusElement.style.backgroundColor = 'gray';
+        }
+
+        avatarStatusContainer.appendChild(statusElement);
+        memberElement.appendChild(avatarStatusContainer);       
+    
+        const nicknameElement = document.createElement('span');
+        nicknameElement.textContent = ` ${member.name}`;
+        nicknameElement.style.textShadow = '0 4px 4px rgba(0, 0, 0, 0.5)';
+        nicknameElement.style.fontSize = '1.5em';
+        nicknameElement.style.color = '#E3E3E3';
+        nicknameElement.style.marginLeft = '-2%';
+        memberElement.appendChild(nicknameElement);
+
         widgetDiv.appendChild(memberElement);
     });
 
@@ -112,7 +163,7 @@ function displayData(data) {
 
 async function runDiscordBot() {
     try {
-        const response = await fetch('/run_discord_bot', {
+        const response = await fetch(`${BASE_URL}/run_discord_bot`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
