@@ -32,7 +32,6 @@ def serve_static(path):
 def update_members():
     global members_data
     members_data = request.json.get('members', [])
-    print(f'Received members data: {members_data}')
     return jsonify({'status': 'success'}), 200
 
 @app.route('/run_discord_bot', methods=['POST'])

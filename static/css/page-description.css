@@ -1,9 +1,9 @@
 .page-description {
-    width: 80%;
+    width: 60%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -60%);
-    height: auto;
+    height: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,17 +21,17 @@
     -webkit-text-stroke: 0.5px #000000;
     color: #E8E8E8;
     text-align: center;
-    font-size: 1.9vw;
+    font-size: 1.5vw;
 }
 
 .description-header-text {
-    font-size: 3.6vw;
+    font-size: 2.7vw;
     font-weight: 800;
     margin-bottom: 10px;
 }
 
 .description-bold-text {
-    font-size: 1.9vw;
+    font-size: 1.5vw;
     font-weight: 800;
 }
 
