@@ -1,51 +1,74 @@
 .structure-main {
     display: flex;
     flex-direction: row;
-    height: 700px;
-    width: 90%;
-    margin-bottom: 10px;
+    width: 70%;
     justify-content: space-between;
+    align-items: stretch; /* Ensure children stretch to the same height */
 }
 
 .hierarchy {
-    width: 65%;
+    width: 100%; 
+    flex: 1;
     display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start;
+    position: relative;
 }
 
 .hierarchy-headers {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     width: 100%;
-    height: 100%;
+    position: relative;
 }
 
 .hierarchy-header {
     background-color: #294C2A;
     border: 5px solid #192F1A;
-    width: 100%;
-    height: 70px;
+    width: 97%;
+    height: 90px;
     align-items: center; 
     justify-content: center;
     font-family: 'League Spartan', sans-serif;
     color: #E3E3E3;
-    font-size: 1.9vw;
+    font-size: 50px;
     text-align: center;
     display: flex;
     border-radius: 15px;
+    margin-bottom: 15px;
 }
 
-.hierarchy-section {
-    width: 30%;
-    flex-direction: column;
+.hierarchy-section-officer {
+    width: 100%;
     display: flex;
-    height: 100%;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start;
     text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.hierarchy-section-nco {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.officers-section {
+    margin-bottom: 20px;
+}
+
+.senior-ncos {
+    margin-bottom: 20px;
 }
 
 .online-members {
-    height: 100%;
-    width: 30%;
+    width: 45%;
     background-color: #294C2A;
     border: 5px solid #192F1A;
     border-radius: 15px;
@@ -53,13 +76,16 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    min-height: 700px; /* Set minimum height to 700px */
+    max-height: 100%; /* Ensure it doesn't exceed the height of .hierarchy */
+    margin-bottom: 5px;
 }
 
 .online-members-line {
     width: 90%;
     height: 5px;
     background-color: #192F1A;
-    margin-bottom: 10px;
     border-radius: 15px;
     min-height: 5px;
 }
@@ -67,7 +93,7 @@
 .online-members-list {
     flex-grow: 1; 
     width: 90%;
-    overflow-y: auto; 
+    overflow-y: auto;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -98,22 +124,46 @@
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5); 
     -webkit-text-stroke: 1px #000000;
     color: #E3E3E3;
-    font-size: 70px;
+    font-size: 60px;
     font-weight: 700;
     margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .spinner {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #3498db; 
     border-radius: 50%;
     width: 120px;
     height: 120px;
     animation: spin 2s linear infinite;
-    margin: auto; /* Center the spinner */
-  }
+    margin: auto;
+}
   
-  @keyframes spin {
+@keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
+}
+
+/* Ensure the content wraps properly and stays within the container */
+#discord-bot-output {
+    white-space: pre-wrap; /* Wraps the text to fit within the container */
+    word-wrap: break-word; /* Breaks long words to fit within the container */
+    padding: 10px; /* Adds padding to prevent content from touching the edges */
+    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 480px) {
+    .online-members {
+        padding: 10px; /* Adds padding to the container */
+    }
+
+    .structure-header-text {
+        font-size: 18px; /* Adjusts the font size for smaller screens */
+    }
+
+    .online-members-list {
+        padding: 10px; /* Adds padding to the list container */
+    }
+}

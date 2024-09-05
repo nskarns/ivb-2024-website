@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/page-description.css">
     <link rel="stylesheet" type="text/css" href="css/buttons.css">
     <link rel="stylesheet" type="text/css" href="css/structure.css">
+    <meta name="viewport" content="width=device-width, initial-scale=.2">
 </head>
 <body>
     <div class="header">
@@ -48,36 +49,54 @@
     </div>
     <div class="line buffer"></div>
     <div class="structure-buttons">
-        <div class="company-button company-button-active" id="0">HQ</div>
-        <div class="company-button" id="1">69th Co. A</div>
-        <div class="company-button" id="2">69th Co. C</div>
-        <div class="company-button" id="3">69th Co. D</div>
-        <div class="company-button" id="4">69th Co. F</div>
-        <div class="company-button" id="5">69th Co. I</div>
-        <div class="company-button" id="6">69th Co. K</div>
-        <div class="company-button" id="7">1st NY Bat. B</div>
+        <div style="display: flex; margin-bottom: 15px; width: 60%">
+            <div class="company-button company-button-active" id="0">HQ</div>
+            <div class="company-button" id="1">69th Co. A</div>
+            <div class="company-button" id="4">69th Co. F</div>
+            <div class="company-button" id="7">1st NY Bat. B</div>
+        </div>
+        <div style="display: flex; width: 60%">
+            <div class="company-button" id="3">69th Co. D</div>
+            <div class="company-button" id="5">69th Co. I</div>
+            <div class="company-button" id="2">69th Co. C</div>
+            <div class="company-button" id="6">69th Co. K</div>
+        </div>
     </div>
     <div class="line buffer-small"></div>
     <div class="structure-main">
         <div class="hierarchy">
             <div class="hierarchy-headers">
-                <div class="hierarchy-section">
+                <!-- Officers Section -->
+                <div class="hierarchy-section-officer">
                     <div class="hierarchy-header">
                         <div>Officers</div>
                     </div>
-                    <div class="officers"></div>
-                </div>
-                <div class="hierarchy-section">
-                    <div class="hierarchy-header">
-                        <div>Senior NCOs</div>
+                    <div style="background-color: rgba(96, 96, 96, 0.8); width: 95%; padding: 10px; border-radius: 15px;">
+                        <div class="officers" data-section-id="0"></div>
+                        <div class="officers" data-section-id="1"></div>
+                        <div class="officers" data-section-id="2"></div>
+                        <div class="officers" data-section-id="3"></div>
+                        <div class="officers" data-section-id="4"></div>
+                        <div class="officers" data-section-id="5"></div>
+                        <div class="officers" data-section-id="6"></div>
+                        <div class="officers" data-section-id="7"></div>
                     </div>
-                    <div class="senior-ncos"></div>
                 </div>
-                <div class="hierarchy-section">
+                <!-- NCOs Section -->
+                <div class="hierarchy-section-nco">
                     <div class="hierarchy-header">
-                        <div>Junior NCOs</div>
+                        <div>NCOs</div>
                     </div>
-                    <div class="junior-ncos"></div>
+                    <div style="background-color: rgba(96, 96, 96, 0.8); width: 95%; padding-top: 10px; padding-right: 10px; padding-left: 10px; border-radius: 15px;">
+                        <div class="senior-ncos" data-section-id="0"></div>
+                        <div class="senior-ncos" data-section-id="1"></div>
+                        <div class="senior-ncos" data-section-id="2"></div>
+                        <div class="senior-ncos" data-section-id="3"></div>
+                        <div class="senior-ncos" data-section-id="4"></div>
+                        <div class="senior-ncos" data-section-id="5"></div>
+                        <div class="senior-ncos" data-section-id="6"></div>
+                        <div class="senior-ncos" data-section-id="7"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,4 +115,7 @@
     <div class="buffer-small"></div>
 </body>
 <script src="js/update-members.js"></script>
+<script src="js/high-ranking.js"></script>
+<script src="js/adjust-online-members-height.js"></script>
+<script src="js/hide-nco.js"></script>
 </html>

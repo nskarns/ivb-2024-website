@@ -19,12 +19,15 @@ body::before {
     right: 0;
     bottom: 0;
     background-image: url('../images/background.gif');
-    background-size: cover;
-    background-position: center -300%;
-    background-attachment: fixed;
+    background-size: auto calc(100vh * 1.5); /* Scale height to 1.25 times the viewport height */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Fix the background image in place */
+
     filter: blur(10px); 
     z-index: -1;
 }
+
 
 .line {
     width: 90%;
@@ -35,11 +38,13 @@ body::before {
 }
 
 .line-vertical {
-    height: 680px;
+    height: auto;
     background-color: #828282;
     margin-bottom: 20px;
     border-radius: 15px;
     margin: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
     width: 5px;
 }
 
@@ -59,7 +64,9 @@ body::before {
 .end-text {
     font-family: 'League Spartan', sans-serif;
     color: #FFFFFF;
-    font-size: 12px;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
 }
 
 .no-text-decoration {
