@@ -1,7 +1,7 @@
 .structure-main {
     display: flex;
     flex-direction: row;
-    width: 60%;
+    width: 70%;
     justify-content: space-between;
     align-items: stretch; /* Ensure children stretch to the same height */
 }
@@ -86,7 +86,6 @@
     width: 90%;
     height: 5px;
     background-color: #192F1A;
-    margin-bottom: 10px;
     border-radius: 15px;
     min-height: 5px;
 }
@@ -125,9 +124,10 @@
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5); 
     -webkit-text-stroke: 1px #000000;
     color: #E3E3E3;
-    font-size: 70px;
+    font-size: 60px;
     font-weight: 700;
     margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .spinner {

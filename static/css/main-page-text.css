@@ -4,7 +4,7 @@
     -webkit-text-stroke: 0.5px #000000;
     color: #E3E3E3;
     text-align: center;
-    font-size: 1.0vw;
+    font-size: 1.3vw;
     background: rgba(96, 96, 96, 0.4); 
     width: 60%;
     padding: 10px;
@@ -13,7 +13,7 @@
 }
 
 .main-page-header-text {
-    font-size: 1.3vw;
+    font-size: 1.6vw;
     font-weight: 600;
     margin-bottom: 5px;
 }

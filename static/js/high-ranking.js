@@ -76,6 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 nicknameElement.style.fontSize = '1.2vw';
                 nicknameElement.style.color = '#E3E3E3';
                 nicknameElement.style.marginLeft = '2%';
+                nicknameElement.style.marginTop = '1%';
+                nicknameElement.style.marginBottom = '1%';
                 memberElement.appendChild(nicknameElement);
 
                 if (info.pos === 'Officer') {
