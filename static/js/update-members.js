@@ -117,8 +117,8 @@ function displayData(data) {
         const avatarElement = document.createElement('img');
         avatarElement.src = member.avatar;
         avatarElement.alt = `${member.name}'s avatar`;
-        avatarElement.style.width = '50px'; 
-        avatarElement.style.height = '50px'; 
+        avatarElement.style.width = '2.1vw'; 
+        avatarElement.style.height = '2.1vw'; 
         avatarElement.style.borderRadius = '50%';
         avatarStatusContainer.appendChild(avatarElement);
 

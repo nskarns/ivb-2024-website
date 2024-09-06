@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const nicknameElement = document.createElement('span');
                 nicknameElement.textContent = ` ${info.name}`;
                 nicknameElement.style.textShadow = '0 4px 4px rgba(0, 0, 0, 0.5)';
-                nicknameElement.style.fontSize = '1.5em';
+                nicknameElement.style.fontSize = '1.2vw';
                 nicknameElement.style.color = '#E3E3E3';
                 nicknameElement.style.marginLeft = '2%';
                 memberElement.appendChild(nicknameElement);
