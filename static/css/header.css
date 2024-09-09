@@ -19,11 +19,15 @@
     align-items: center;
     justify-content: center;
     font-family: 'League Spartan', sans-serif;
-    font-size: 48px; 
+    font-size: clamp(20px, 4vw, 48px);
     padding-right: 13%;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5); 
     -webkit-text-stroke: 1px #000000;
     color: #E3E3E3;
+    max-width: 100%;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .header-text {
@@ -56,9 +60,6 @@
 
 /* Media Queries for Responsiveness based on width */
 @media (max-width: 1600px) {
-    .left-header {
-        font-size: 36px;
-    }
 
     .header-text {
         font-size: 20px;
@@ -82,8 +83,7 @@
     }
 
     .left-header {
-        padding-right: 0;
-        margin-left: -15px;
+        margin-left: 20px;
     }
 
     .header-text {
@@ -97,16 +97,30 @@
 }
 
 @media (max-width: 480px) {
+
+    .header {
+        display: flex; 
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+        height: auto;
+        text-align: center; 
+    }
+
     .left-header {
-        font-size: 24px;
+        width: 100%; 
+        text-align: center; 
     }
 
     .header-text {
         font-size: 16px;
+        width: 100%; 
+        text-align: center; 
     }
 
     .harp {
-        height: 50px;
+        height: 30px;
+        padding-right: 15px;
     }
 
 }

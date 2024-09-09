@@ -49,13 +49,30 @@ function displayData(data) {
             "'LtCol.",
             "'Maj.",
             "'Major",
+            ".Bvt.Cpt.",
             "*Cpt.",
+            "Cpt.",
             ".1stLt.",
-            ".2ndLt."
+            ".2ndLt.",
+            ".1stLtBvt.",
+            ",Chaplain",
+            ".BLT",
+            "`Sgt."
         ];
-    
+        
         members = members.filter(member => {
-            return member.name && substrings.some(substring => member.name.includes(substring));
+            return member.name && substrings.some(substring => {
+                if (substring === ".Bvt.Cpt.") {
+                    return false;
+                }
+                else if (substring === ".1stLt." || substring === "Cpt.") {
+                    return member.name.includes(substring) && (member.name.includes("69th") || member.name.includes("S1"));
+                }
+                else if (substring === "`Sgt.") {
+                    return member.name.includes(substring) && member.name.includes("1stNY-B");
+                }
+                return member.name.includes(substring);
+            });
         });
     }
     else if (activeCompanyId == 1) {
@@ -117,8 +134,8 @@ function displayData(data) {
         const avatarElement = document.createElement('img');
         avatarElement.src = member.avatar;
         avatarElement.alt = `${member.name}'s avatar`;
-        avatarElement.style.width = '2.1vw'; 
-        avatarElement.style.height = '2.1vw'; 
+        avatarElement.style.width = '50px'; 
+        avatarElement.style.height = '50px'; 
         avatarElement.style.borderRadius = '50%';
         avatarStatusContainer.appendChild(avatarElement);
 
@@ -150,9 +167,10 @@ function displayData(data) {
         const nicknameElement = document.createElement('span');
         nicknameElement.textContent = ` ${member.name}`;
         nicknameElement.style.textShadow = '0 4px 4px rgba(0, 0, 0, 0.5)';
-        nicknameElement.style.fontSize = '1.5em';
+        nicknameElement.style.fontSize = 'font-size: clamp(12px, 0.7vw, 24px);';
         nicknameElement.style.color = '#E3E3E3';
         nicknameElement.style.marginLeft = '-2%';
+        nicknameElement.style.maxWidth = "60%";
         memberElement.appendChild(nicknameElement);
 
         widgetDiv.appendChild(memberElement);

@@ -19,11 +19,11 @@ body::before {
     right: 0;
     bottom: 0;
     background-image: url('../images/background.gif');
-    background-size: auto calc(100vh * 1.5); /* Scale height to 1.25 times the viewport height */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-position: center; /* Center the image */
-    background-attachment: fixed; /* Fix the background image in place */
-
+    background-size: auto calc(100vh * 1.5);
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-attachment: fixed; 
+    background-size: cover;
     filter: blur(10px); 
     z-index: -1;
 }
@@ -64,7 +64,7 @@ body::before {
 .end-text {
     font-family: 'League Spartan', sans-serif;
     color: #FFFFFF;
-    font-size: 15px;
+    font-size: clamp(12px, 0.7vw, 24px);
     text-align: center;
     width: 100%;
 }
@@ -77,4 +77,44 @@ body::before {
 .border {
     border: 5px solid #000000;
     border-radius: 30px;
+}
+
+.video-container {
+    position: relative;
+    width: 40%; /* Ensure the container takes full width */
+    aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
+    overflow: hidden; 
+    border: 5px solid #000000;
+    border-radius: 35px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (max-width: 480px) {
+    .video-container {
+        position: relative;
+        width: 80%; 
+        max-width: 100%; 
+        max-height: 56.25%; 
+        aspect-ratio: 16 / 9; 
+        overflow: hidden; 
+        border: 5px solid #000000;
+        border-radius: 35px;
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
 }

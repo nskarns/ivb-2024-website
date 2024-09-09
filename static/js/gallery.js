@@ -14,31 +14,36 @@ const mediaFiles = [
 const itemsPerPage = 6;
 let currentPage = 1;
 
+function isMobileDevice() {
+    return window.innerWidth <= 768;
+}
+
 function renderPage(page) {
     const mediaContainer = document.getElementById('media-container');
     mediaContainer.innerHTML = '';
 
     if (mediaFiles.length === 0) {
         mediaContainer.innerHTML = 'No Media Found';
-    }
-    else {
+    } else {
         const start = (page - 1) * itemsPerPage;
         const end = start + itemsPerPage;
         const pageItems = mediaFiles.slice(start, end);
 
-        for (let i = 0; i < pageItems.length; i += 3) {
+        const itemsPerRow = isMobileDevice() ? 1 : 3;
+
+        for (let i = 0; i < pageItems.length; i += itemsPerRow) {
             const mediaRow = document.createElement('div');
             mediaRow.className = 'media';
 
-            pageItems.slice(i, i + 3).forEach(file => {
+            pageItems.slice(i, i + itemsPerRow).forEach(file => {
                 const mediaElement = file.endsWith('.mp4') ? document.createElement('video') : document.createElement('img');
                 mediaElement.src = file;
                 if (mediaElement.tagName === 'VIDEO') {
                     mediaElement.className = 'media-video';
                     mediaElement.controls = true;
-                }
-                else {
+                } else {
                     mediaElement.className = 'media-image';
+                    mediaElement.loading = 'lazy';
                 }
 
                 mediaRow.appendChild(mediaElement);
