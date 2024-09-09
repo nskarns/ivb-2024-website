@@ -39,6 +39,7 @@ function renderPage(page) {
                 }
                 else {
                     mediaElement.className = 'media-image';
+                    mediaElement.loading = 'lazy';
                 }
 
                 mediaRow.appendChild(mediaElement);
