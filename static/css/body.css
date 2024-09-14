@@ -13,21 +13,19 @@ body {
 
 body::before {
     content: '';
-    position: absolute;
+    position: fixed; /* Changed from absolute to fixed */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-image: url('../images/background.gif');
-    background-size: auto calc(100vh * 1.5);
+    background-size: cover; /* Ensure the background covers the entire viewport */
     background-repeat: no-repeat;
     background-position: center; 
     background-attachment: fixed; 
-    background-size: cover;
     filter: blur(10px); 
     z-index: -1;
 }
-
 
 .line {
     width: 90%;
