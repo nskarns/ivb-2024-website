@@ -45,8 +45,17 @@ window.addEventListener("load", function() {
     companyButtons.forEach(button => {
         observer.observe(button, { attributes: true });
         button.addEventListener('click', function() {
-            hideNCOSectionIfActiveIsZero();
-            adjustOnlineMembersHeight();
+            // Remove the active class from all buttons
+            companyButtons.forEach(btn => btn.classList.remove('company-button-active'));
+            // Trigger a reflow by reading the offsetHeight property
+            void button.offsetHeight;
+            // Add the active class to the clicked button
+            button.classList.add('company-button-active');
+            // Use requestAnimationFrame to ensure the layout adjustments happen after the class change is rendered
+            requestAnimationFrame(() => {
+                hideNCOSectionIfActiveIsZero();
+                adjustOnlineMembersHeight();
+            });
         });
     });
 
