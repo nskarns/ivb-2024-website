@@ -1,5 +1,6 @@
 const BASE_URL = window.location.origin;
 
+// Fetches the online members
 async function fetchDiscordWidget() {
     const loadingIndicator = document.getElementById('loading-indicator');
     const discordBotOutput = document.getElementById('discord-bot-output');
@@ -29,11 +30,12 @@ async function fetchDiscordWidget() {
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
     } finally {
-        loadingIndicator.style.display = 'none'; // Ensure the loading indicator is hidden
+        loadingIndicator.style.display = 'none';
         discordBotOutput.style.display = 'block';
     }
 }
 
+// Displays the data for each online discord member
 function displayData(data) {
     const activeCompany = document.querySelector('.company-button.company-button-active');
     const activeCompanyId = activeCompany ? activeCompany.id : null;
@@ -179,6 +181,7 @@ function displayData(data) {
     console.log(members);
 }
 
+// Calls the app.py to run discord-bot.py which fetches online members
 async function runDiscordBot() {
     try {
         const response = await fetch(`${BASE_URL}/run_discord_bot`, {
@@ -193,7 +196,6 @@ async function runDiscordBot() {
         const data = await response.json();
         console.log('Success:', data);
 
-        // Fetch the Discord widget data after the bot has run
         await fetchDiscordWidget();
         
     } catch (error) {
@@ -201,12 +203,12 @@ async function runDiscordBot() {
     }
 }
 
-// Fetch the Discord widget data and run the Discord bot when the page loads
+// Run the discord bot when the structure page is loaded
 document.addEventListener('DOMContentLoaded', async () => {
     await runDiscordBot();
 });
 
-// Add event listeners to the buttons
+// If a company button is selected, make that one the active button
 const buttons = document.querySelectorAll('.company-button');
 buttons.forEach(button => {
     button.addEventListener('click', async () => {

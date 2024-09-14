@@ -122,7 +122,6 @@
 .structure-header-text {
     font-family: 'League Spartan', sans-serif;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5); 
-    -webkit-text-stroke: 1px #000000;
     color: #E3E3E3;
     font-size: 60px;
     font-weight: 700;
@@ -167,24 +166,23 @@
     100% { transform: rotate(360deg); }
 }
 
-/* Ensure the content wraps properly and stays within the container */
 #discord-bot-output {
-    white-space: pre-wrap; /* Wraps the text to fit within the container */
-    word-wrap: break-word; /* Breaks long words to fit within the container */
-    padding: 10px; /* Adds padding to prevent content from touching the edges */
-    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+    padding: 10px; 
+    box-sizing: border-box; 
 }
 
 /* Media Queries for smaller screens */
 @media (max-width: 480px) {
     .online-members {
-        padding: 10px; /* Adds padding to the container */
+        padding: 10px; 
         height: auto;
         min-height: 0px;
     }
 
     .online-members-list {
-        padding: 10px; /* Adds padding to the list container */
+        padding: 10px; 
     }
 
     .structure-main {

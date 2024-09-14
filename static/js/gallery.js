@@ -18,6 +18,7 @@ function isMobileDevice() {
     return window.innerWidth <= 768;
 }
 
+// Grabbing the correct images and showing them on the screen
 function renderPage(page) {
     const mediaContainer = document.getElementById('media-container');
     mediaContainer.innerHTML = '';
@@ -57,6 +58,7 @@ function renderPage(page) {
     }
 }
 
+// Determing the page number
 function renderPagination() {
     const paginationContainer = document.getElementById('pagination');
     paginationContainer.innerHTML = '';
@@ -75,6 +77,7 @@ function renderPagination() {
     }
 }
 
+// Placing the click listener event on the images so that they enlarge when selected
 function attachClickEventToImages() {
     document.querySelectorAll('.media img').forEach(media => {
         media.addEventListener('click', function() {
@@ -88,7 +91,6 @@ function attachClickEventToImages() {
             enlargedImage.src = this.src;
             enlargedImage.style.display = 'block';
             
-            // Display the enlarged media container
             enlargedMediaContainer.style.display = 'flex';
             enlargedMediaContainer.style.position = 'fixed';
             enlargedMediaContainer.style.top = '0';
@@ -102,6 +104,7 @@ function attachClickEventToImages() {
     });
 }
 
+// When an image is clicked, make that image enlarged
 document.addEventListener('click', function(event) {
     const enlargedMediaContainer = document.getElementById('enlarged-media-container');
     if (!event.target.closest('.media img') && !event.target.closest('#enlarged-image')) {

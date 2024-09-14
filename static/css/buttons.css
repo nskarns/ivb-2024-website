@@ -30,7 +30,7 @@
 }
 
 .company-button-active {
-    background-color: #AB9D68;
+    background-color: #AB9D68 !important;
     border: 5px solid #3e2e0b;
     width: 40%;
     height: 70px;
@@ -45,7 +45,7 @@
 }
 
 .company-button:hover {
-    background-color: #827545; 
+    background-color: #827545 !important; 
 }
 
 
@@ -55,7 +55,7 @@
 }
 
 .company-button-active:hover {
-    background-color: #68501C; 
+    background-color: #68501C ; 
 }
 
 /* Media Queries for smaller screens */

@@ -1,7 +1,6 @@
 .main-page-text {
     font-family: 'League Spartan', sans-serif;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5); 
-    -webkit-text-stroke: 0.5px #000000;
     color: #E3E3E3;
     text-align: center;
     font-size: clamp(16px, 1.3vw, 24px);
@@ -15,7 +14,6 @@
 .main-page-text-schedule {
     font-family: 'League Spartan', sans-serif;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5); 
-    -webkit-text-stroke: 0.5px #000000;
     color: #E3E3E3;
     text-align: center;
     font-size: clamp(16px, 1.3vw, 24px);
@@ -30,7 +28,6 @@
 .main-page-text-mobile {
     font-family: 'League Spartan', sans-serif;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5); 
-    -webkit-text-stroke: 0.5px #000000;
     color: #E3E3E3;
     text-align: center;
     font-size: clamp(16px, 1.3vw, 24px);
@@ -51,7 +48,6 @@
 .main-page-bottom-text {
     font-family: 'League Spartan', sans-serif;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5); 
-    -webkit-text-stroke: 1px #000000;
     color: #E3E3E3;
     font-size: clamp(25px, 3.3vw, 3.3vw);
     font-weight: 700;
