@@ -1,3 +1,4 @@
+// When the page loads run the code
 window.addEventListener("load", function() {
     function hideNCOSectionIfActiveIsZero() {
         const activeButton = document.querySelector('.company-button-active');
@@ -30,7 +31,6 @@ window.addEventListener("load", function() {
     // Adjust height on window resize
     window.addEventListener('resize', adjustOnlineMembersHeight);
 
-    // Observe changes to the company-button-active class
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
             if (mutation.attributeName === 'class') {
@@ -40,18 +40,14 @@ window.addEventListener("load", function() {
         });
     });
 
-    // Start observing the company buttons
     const companyButtons = document.querySelectorAll('.company-button');
     companyButtons.forEach(button => {
         observer.observe(button, { attributes: true });
         button.addEventListener('click', function() {
-            // Remove the active class from all buttons
             companyButtons.forEach(btn => btn.classList.remove('company-button-active'));
-            // Trigger a reflow by reading the offsetHeight property
             void button.offsetHeight;
-            // Add the active class to the clicked button
             button.classList.add('company-button-active');
-            // Use requestAnimationFrame to ensure the layout adjustments happen after the class change is rendered
+            
             requestAnimationFrame(() => {
                 hideNCOSectionIfActiveIsZero();
                 adjustOnlineMembersHeight();
@@ -59,14 +55,14 @@ window.addEventListener("load", function() {
         });
     });
 
-    // Simulate click on the company-button-active with ID 0 after 100 milliseconds
+    // Run function when page loads to make initial online member list adjust height
     setTimeout(function() {
         const activeButton = document.querySelector('.company-button-active');
         if (activeButton) {
-            console.log('Active button found:', activeButton); // Debugging statement
+            console.log('Active button found:', activeButton);
             activeButton.click();
         } else {
-            console.error('Active button not found'); // Debugging statement
+            console.error('Active button not found');
         }
     }, 100);
 });

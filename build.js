@@ -1,3 +1,4 @@
+// Allows the code to be built for Cloudflare/Hostinger
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
@@ -16,10 +17,8 @@ filesToCopy.forEach(file => {
   const destPath = path.join(distDir, file);
 
   if (fs.lstatSync(srcPath).isDirectory()) {
-    // Skip the dist and venv directories to avoid infinite loop and unnecessary copying
     if (file !== 'dist' && file !== 'venv') {
       fs.mkdirSync(destPath, { recursive: true });
-      // Recursively copy the directory
       copyDirectory(srcPath, destPath);
     }
   } else {

@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const officerInfoUrl = '../member-grabber/officer_info.txt'; // URL to the officer_info.txt file
+    const officerInfoUrl = '../member-grabber/officer_info.txt'; 
 
-    // Mapping of company codes to section IDs
     const companyToSectionId = {
         'HQ': '0',
         'CoA': '1',
@@ -13,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'CoB': '7'
     };
 
-    // Function to fetch and parse the officer_info.txt file
+    // Grabbing each individual officer's information
     async function fetchOfficerInfo() {
         try {
             const response = await fetch(officerInfoUrl);
@@ -28,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const company = parts[0];
                 const pos = parts[1];
                 const avatarUrl = parts[2];
-                const name = parts.slice(3).join(' '); // Join the remaining parts as the name
+                const name = parts.slice(3).join(' ');
                 return { company, pos, avatarUrl, name };
             });
             console.log('Officer info fetched and parsed successfully.');
@@ -39,14 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Function to update the officers and senior-ncos sections
+    // Display the officer and senior-ncos information in respective sections
 function updateSections(officerInfo) {
-    // Clear previous content
     document.querySelectorAll('.officers, .senior-ncos').forEach(section => {
         section.innerHTML = '';
     });
 
-    // Filter and add officers and NCOs to the respective sections
     officerInfo.forEach(info => {
         const sectionId = companyToSectionId[info.company];
         console.log(`Processing ${info.name} for company ${info.company} with section ID ${sectionId}`);
@@ -84,10 +81,8 @@ function updateSections(officerInfo) {
                 const hqSection = document.querySelector(`.officers[data-section-id="${0}"]`);
                 const officersSection = document.querySelector(`.officers[data-section-id="${sectionId}"]`);
                 if (officersSection) {
-                    // Append to the officers section
                     officersSection.appendChild(memberElement);
 
-                    // Only append to the HQ section if the company is not HQ
                     if (info.company !== 'HQ') {
                         const memberElementClone = memberElement.cloneNode(true);
                         hqSection.appendChild(memberElementClone);
@@ -113,7 +108,7 @@ function updateSections(officerInfo) {
     });
 }
 
-    // Function to toggle visibility of sections based on active company button
+    // If the section doesn't have a certain group, then don't display it
     function toggleSections(activeId) {
         document.querySelectorAll('.officers, .senior-ncos').forEach(section => {
             if (section.getAttribute('data-section-id') === activeId) {
@@ -124,7 +119,7 @@ function updateSections(officerInfo) {
         });
     }
 
-    // Event listener for company buttons
+    // When the active company button is changed, grab the id of that button
     document.querySelectorAll('.company-button').forEach(button => {
         button.addEventListener('click', function() {
             document.querySelectorAll('.company-button').forEach(btn => btn.classList.remove('company-button-active'));
@@ -133,7 +128,6 @@ function updateSections(officerInfo) {
         });
     });
 
-    // Main function to initialize the script
     async function init() {
         const officerInfo = await fetchOfficerInfo();
         if (officerInfo.length > 0) {
@@ -147,6 +141,5 @@ function updateSections(officerInfo) {
         }
     }
 
-    // Initialize the script
     init();
 });

@@ -11,16 +11,11 @@ load_dotenv()
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 
-# Insert your bot token here
 TOKEN = os.getenv('DISCORD_BOT_TOKEN')
 
 if not TOKEN:
     logging.error("DISCORD_BOT_TOKEN is not set. Please check your .env file.")
     exit(1)
-
-# Print the token for debugging purposes (remove this in production)
-logging.info(f'Token: {TOKEN}')
-
 
 class MyClient(discord.Client):
     def __init__(self, *args, **kwargs):
@@ -36,15 +31,14 @@ class MyClient(discord.Client):
         async with aiofiles.open('static/member-grabber/officer_ids.txt', 'r') as file:
             async for line in file:
                 parts = line.strip().split()
-                company = parts[0]  # Get the Company
-                pos = parts[1]  # Get the Position
-                user_id = parts[-1]  # Get the last part which is the ID
+                company = parts[0]  
+                pos = parts[1]  
+                user_id = parts[-1] 
                 logging.info(f'Reading user ID: {user_id}, Company: {company}, Position: {pos}')
                 user_details.append((company, pos, int(user_id)))
 
         # Open the output file
         async with aiofiles.open('static/member-grabber/officer_info.txt', 'w') as output_file:
-            # Find each user by ID and write to the output file
             for company, pos, user_id in user_details:
                 user = await self.find_user_by_id(user_id)
                 if user:

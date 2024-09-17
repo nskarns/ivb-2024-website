@@ -9,12 +9,9 @@ import os
 # Load environment variables from .env file
 load_dotenv()
 
-# Get the bot token and base URL from environment variables
 TOKEN = os.getenv('DISCORD_BOT_TOKEN')
 GUILD_ID = 645305502548492289
 BASE_URL = os.getenv('BASE_URL')
-
-# Construct the full URL for the update_members endpoint
 WEB_SERVER_URL = f"{BASE_URL}/update_members"
 
 intents = discord.Intents.default()
@@ -39,7 +36,6 @@ async def on_ready():
                 member.mobile_status != discord.Status.offline or
                 member.web_status != discord.Status.offline):
                 
-                # Determine the status
                 if member.desktop_status != discord.Status.offline:
                     status = member.desktop_status.name
                 elif member.mobile_status != discord.Status.offline:
@@ -58,7 +54,7 @@ async def on_ready():
     except Exception as e:
         print(f"An error occurred: {e}")
     
-    # Prepare data for web server
+    # Preparing to send data over web server
     try:
         response = requests.post(WEB_SERVER_URL, json={'members': members})
         print(f'Server response: {response.status_code} - {response.text}')
