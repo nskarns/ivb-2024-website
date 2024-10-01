@@ -86,12 +86,6 @@ function displayData(data) {
     else if (activeCompanyId == 3) {
         members = members.filter(member => member.name && member.name.includes('69th-D'));
     }
-    else if (activeCompanyId == 4) {
-        members = members.filter(member => member.name && member.name.includes('69th-F'));
-    }
-    else if (activeCompanyId == 5) {
-        members = members.filter(member => member.name && member.name.includes('69th-I'));
-    }
     else if (activeCompanyId == 6) {
         members = members.filter(member => member.name && member.name.includes('69th-K'));
     }
@@ -169,7 +163,7 @@ function displayData(data) {
         const nicknameElement = document.createElement('span');
         nicknameElement.textContent = ` ${member.name}`;
         nicknameElement.style.textShadow = '0 4px 4px rgba(0, 0, 0, 0.5)';
-        nicknameElement.style.fontSize = 'font-size: clamp(12px, 0.7vw, 24px);';
+        nicknameElement.style.fontSize = 'clamp(12px, 0.7vw, 30px)';
         nicknameElement.style.color = '#E3E3E3';
         nicknameElement.style.marginLeft = '-2%';
         nicknameElement.style.maxWidth = "60%";
@@ -178,7 +172,13 @@ function displayData(data) {
         widgetDiv.appendChild(memberElement);
     });
 
-    console.log(members);
+    if (members.length === 0) {
+       widgetDiv.innerHTML = "No Members Online";
+       widgetDiv.style.textShadow = '0 4px 4px rgba(0, 0, 0, 0.5)';
+       widgetDiv.style.fontSize = 'clamp(12px, 1.0vw, 30px)';
+       widgetDiv.style.color = '#E3E3E3';
+    }
+
 }
 
 // Calls the app.py to run discord-bot.py which fetches online members

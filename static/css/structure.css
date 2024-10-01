@@ -76,9 +76,9 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* Allow scrolling if content overflows */
-    min-height: 700px; /* Set minimum height to 700px */
-    max-height: 100%; /* Ensure it doesn't exceed the height of .hierarchy */
+    overflow-y: auto;
+    min-height: 700px; 
+    max-height: 100%; 
     margin-bottom: 5px;
 }
 
@@ -169,7 +169,11 @@
 #discord-bot-output {
     white-space: pre-wrap; 
     word-wrap: break-word; 
-    padding: 10px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+    width: 100%;
     box-sizing: border-box; 
 }
 
