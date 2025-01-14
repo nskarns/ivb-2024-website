@@ -5,7 +5,7 @@ This is a website to promote and hopefully have people join the Irish Volunteer 
 
 ## Development Process
 
-The creation of this website used HTML and CSS to create the main design of the website. In order to show the current members that are online in their Discord, I used Python and Flask to access Discord's API to return a list of people who were online. From there, I used JavaScript to show generate the HTML that would allow the user on page to see who is currently online.
+The creation of this website used HTML and CSS to create the main design of the website. In order to show who is currently online in this group's discord, I have created a Discord Bot that is in the server that will send information on every member to [discord-bot.py](https://github.com/nskarns/ivb-2024-website/blob/main/static/member-grabber/discord-bot.py). Once recieved, it'll filter out every person who is offline and create a new list of people who are online. From there, I used JavaScript to show generate the HTML that would allow the user on page to see who is currently online.
 
 ## Code Explanations
 
