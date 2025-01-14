@@ -1,5 +1,5 @@
 # Irish Volunteer Brigade Website (2024)
-This is a website to promote and hopefully have people join the Irish Volunteer Brigade regiment for the War of Rights video game. This website includes advertisments for this regiment, their leadership hierarchy, and shows who is online on their over 1,500 member discord.
+This is a website that works on both PC and mobile to promote and hopefully have people join the Irish Volunteer Brigade regiment for the War of Rights video game. This website includes advertisments for this regiment, their leadership hierarchy, and shows who is online on their over 1,500 member discord.
 
 [Irish Volunteer Brigade Website](https://theirishvolunteers.com/)
 
