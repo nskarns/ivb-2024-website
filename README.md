@@ -3,6 +3,8 @@ This is a website that works on both PC and mobile to promote and hopefully have
 
 [Irish Volunteer Brigade Website](https://theirishvolunteers.com/)
 
+[Figma Design](https://www.figma.com/design/EYLFVkaJpGM6YWt8PB4sHB/IVB-Website-Redesign?node-id=0-1&t=AeaKEMQR97GxtOv1-1)
+
 ## Development Process
 
 The creation of this website used HTML and CSS to create the main design of the website. In order to show who is currently online in this group's discord, I have created a Discord Bot that is in the server that will send information on every member to [discord-bot.py](https://github.com/nskarns/ivb-2024-website/blob/main/static/member-grabber/discord-bot.py). Once recieved, I use Python to filter out every person who is offline and create a new list of people who are online. From there, I used JavaScript to show generate the HTML that would allow the user on page to see who is currently online.
