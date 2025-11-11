@@ -30,3 +30,6 @@ This looks through ever member on the Irish Volunteer Brigade discord and filter
 
 ### [grab-individual.py](https://github.com/nskarns/ivb-2024-website/blob/main/static/member-grabber/grab-individual.py)
 This grabs individual discord members' information based on the list of people in [officer_ids.txt](https://github.com/nskarns/ivb-2024-website/blob/main/static/member-grabber/officer_ids.txt). Then it grabs the person's company and rank (both from [officer_ids.txt](https://github.com/nskarns/ivb-2024-website/blob/main/static/member-grabber/officer_ids.txt)) alongside their discord profile picture link and username (both from Discord's API). This file is ran periodically by myself to update officer information then pushed to the website. 
+
+## Useful Commands:
+source env/Scripts/activate - Enter ENV
