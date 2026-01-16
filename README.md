@@ -1,3 +1,6 @@
+# OUTDATED WEBSITE REPOSITORY
+This version of the website is now outdated. Please check the newer and updated website repository [here](https://github.com/nskarns/ivb-website/tree/main)!!!
+
 # Irish Volunteer Brigade Website (2024)
 This is a website that works on both PC and mobile to promote and hopefully have people join the Irish Volunteer Brigade regiment for the War of Rights video game. This website includes advertisements for this regiment, their leadership hierarchy, and shows who is online on their over 1,500 member discord.
 
